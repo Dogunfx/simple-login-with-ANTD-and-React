@@ -15,7 +15,7 @@ export default function Home() {
     }
   }
   return (
-    <main className="p-5 mx-auto m-5 shadow-md w-1/2 ">
+    <main className="p-5 mx-auto m-5 shadow-md sm:w-1/2">
       <h1 className="mb-4 text-2xl">Login into Bank</h1>
       <Form form={form}>
         <Form.Item name="email" rules={[{ required: true }]}>
