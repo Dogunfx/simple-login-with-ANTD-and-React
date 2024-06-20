@@ -25,6 +25,13 @@ body {
   height: 100vh;
 }
 
+@media (max-width:500px) {
+  body {
+    height: auto;
+  }
+
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
