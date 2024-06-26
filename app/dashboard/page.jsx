@@ -37,9 +37,9 @@ export default function Dashboard() {
     time += 1;
     if (time == 10) {
       time = 0;
+      changeQuestion();
     }
     setTime(time);
-    changeQuestion();
   }
 
   setInterval(handleTimer, 1000);
