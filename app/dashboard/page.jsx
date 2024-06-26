@@ -48,7 +48,7 @@ export default function Dashboard() {
   return (
     <Card
       title="Welcome to your Math quiz..."
-      className="sm:w-1/2 mx-auto sm:my-60 my-24"
+      className="max-w-sm mx-auto sm:my-60 my-24"
     >
       <div className="text-center">
         <h3 className="text-2xl ">Welcome DogunFX,</h3>
