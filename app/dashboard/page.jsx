@@ -39,11 +39,10 @@ export default function Dashboard() {
       time = 0;
     }
     setTime(time);
+    changeQuestion();
   }
 
-  useEffect(() => {
-    setInterval(handleTimer, 1000);
-  }, []);
+  setInterval(handleTimer, 1000);
 
   return (
     <Card
