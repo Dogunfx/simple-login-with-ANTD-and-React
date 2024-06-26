@@ -9,22 +9,22 @@ export default function Dashboard() {
   let [sn, updateSn] = useState(19);
   let [score, updateScore] = useState(0);
   let [total, updateTotal] = useState(1);
-  let [time, setTime] = useState(0);
+  const [time, setTime] = useState(0);
 
   function checkAnswer() {
     let ans = myFormState.getFieldValue("answer");
 
     if (ans == fn * sn) {
       message.success("Wow!!😳 CorrectCorrect ✅✅✅");
-
+      changeQuestion();
       updateScore((pre) => pre + 1);
-      setTime(0);
+      const ntime = 0;
+      setTime(ntime);
     } else {
       message.error(
         "OLODO,😂😂😂 --- You are wrong the correct answer is " + fn * sn
       );
     }
-    changeQuestion();
   }
 
   function changeQuestion() {
@@ -33,13 +33,15 @@ export default function Dashboard() {
     updateTotal((pre) => pre + 1);
   }
 
+  let ntime = 0;
   function handleTimer() {
-    time += 1;
-    if (time >= 10) {
-      time = 0;
+    ntime = time + 1;
+    if (ntime >= 10) {
+      ntime = 0;
       changeQuestion();
     }
-    setTime((pre) => time);
+    setTime(ntime);
+    // message.info("ok");
   }
 
   useEffect(() => {
