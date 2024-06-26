@@ -43,7 +43,10 @@ export default function Dashboard() {
     setTime(time);
   }
 
-  setInterval(handleTimer, 1000);
+  useEffect(() => {
+    let clearer = setInterval(handleTimer, 1000);
+    return () => clearInterval(clearer);
+  }, []);
 
   return (
     <Card
