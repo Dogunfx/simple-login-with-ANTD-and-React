@@ -18,6 +18,7 @@ export default function Dashboard() {
       message.success("Wow!!😳 CorrectCorrect ✅✅✅");
       let newScore = score + 1;
       updateScore(newScore);
+      setTime(0);
     } else {
       message.error(
         "OLODO,😂😂😂 --- You are wrong the correct answer is " + fn * sn
