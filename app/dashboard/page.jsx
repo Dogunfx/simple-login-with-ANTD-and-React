@@ -36,11 +36,11 @@ export default function Dashboard() {
 
   function handleTimer() {
     time += 1;
-    if (time == 10) {
+    if (time >= 10) {
       time = 0;
       changeQuestion();
     }
-    setTime(time);
+    setTime((pre) => time);
   }
 
   useEffect(() => {
