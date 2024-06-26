@@ -16,8 +16,8 @@ export default function Dashboard() {
 
     if (ans == fn * sn) {
       message.success("Wow!!😳 CorrectCorrect ✅✅✅");
-      let newScore = score + 1;
-      updateScore(newScore);
+
+      updateScore((pre) => pre + 1);
       setTime(0);
     } else {
       message.error(
@@ -30,8 +30,7 @@ export default function Dashboard() {
   function changeQuestion() {
     updateFn(Math.ceil(Math.random() * 20));
     updateSn(Math.ceil(Math.random() * 15));
-    let newTotal = total + 1;
-    updateTotal(newTotal);
+    updateTotal((pre) => pre + 1);
   }
 
   function handleTimer() {
