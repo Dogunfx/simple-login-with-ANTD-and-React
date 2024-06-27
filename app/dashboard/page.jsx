@@ -1,6 +1,7 @@
 "use client";
 import { Card, Button, Form, Input, message, Typography } from "antd";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Dashboard() {
   const [myFormState] = Form.useForm();
@@ -9,7 +10,7 @@ export default function Dashboard() {
   let [sn, updateSn] = useState(19);
   let [score, updateScore] = useState(0);
   let [total, updateTotal] = useState(1);
-  const [time, setTime] = useState(0);
+  let [time, setTime] = useState(0);
 
   function checkAnswer() {
     let ans = myFormState.getFieldValue("answer");
@@ -33,26 +34,22 @@ export default function Dashboard() {
     updateTotal((pre) => pre + 1);
   }
 
-  let ntime = 0;
   function handleTimer() {
-    ntime = time + 1;
-    if (ntime >= 10) {
-      ntime = 0;
+    time = time + 1;
+    if (time >= 10) {
+      time = 0;
       changeQuestion();
     }
-    setTime(ntime);
-    // message.info("ok");
+    setTime(time);
   }
 
-  useEffect(() => {
-    let clearer = setInterval(handleTimer, 1000);
-    return () => clearInterval(clearer);
-  }, []);
+  setInterval(handleTimer, 1000);
 
   return (
     <Card
       title="Welcome to your Math quiz..."
       className="max-w-sm mx-auto sm:my-60 my-24"
+      extra={<a href="/contact">My Contact</a>}
     >
       <div className="text-center">
         <h3 className="text-2xl ">Welcome DogunFX,</h3>
